@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Configuración del entorno
-arcpy.env.workspace = r"C:\Workspace\LagoValencia\LagoValencia.gdb"
+arcpy.env.workspace = r"D:\Workspace\LagoValencia\LagoValencia.gdb"
 raster_path = "mde_integrado"
 output_folder = r"C:\Workspace\LagoValencia\datos\perfil"
 

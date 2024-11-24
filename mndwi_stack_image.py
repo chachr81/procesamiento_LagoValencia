@@ -8,24 +8,24 @@ import matplotlib.pyplot as plt
 arcpy.CheckOutExtension("Spatial")
 
 # Definir espacio de trabajo
-arcpy.env.workspace = r"C:\\Workspace\\LagoValencia\\LagoValencia.gdb"
+arcpy.env.workspace = r"D:\\Workspace\\LagoValencia\\LagoValencia.gdb"
 arcpy.env.overwriteOutput = True
 
 # Definir el sistema de coordenadas de destino (EPSG 2202)
 output_coordinate_system = arcpy.SpatialReference(2202)
 
 # Definir carpeta para guardar los histogramas
-output_folder = r"C:\\Workspace\\LagoValencia\\datos"
+output_folder = r"D:\\Workspace\\LagoValencia\\datos"
 
 # Datos de Entrada (actualizado para usar rasters en stack)
 stack_bandas = {
     
-    '1986': (r"C:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\1986.tif", 'Green', 'NearInfrared_2'),
-    '1990': (r"C:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\1990.tif", 'Green', 'NearInfrared_2'),
-    '2000': (r"C:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2000.tif", 'sr_band2', 'sr_band5'),
-    '2014': (r"C:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2014.tif", 'Green', 'ShortWaveInfrared_1'),
-    '2019': (r"C:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2019.tif", 'Green', 'ShortWaveInfrared_1'),
-    '2023': (r"C:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2023.tif", 'sr_band3', 'sr_band6')
+    '1986': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\1986.tif", 'Green', 'NearInfrared_2'),
+    '1990': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\1990.tif", 'Green', 'NearInfrared_2'),
+    '2000': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2000.tif", 'sr_band2', 'sr_band5'),
+    '2014': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2014.tif", 'Green', 'ShortWaveInfrared_1'),
+    '2019': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2019.tif", 'Green', 'ShortWaveInfrared_1'),
+    '2023': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2023.tif", 'sr_band3', 'sr_band6')
 }
 
 def calcular_mndwi(stack_path, green_band_name, swir_band_name, output_raster):
