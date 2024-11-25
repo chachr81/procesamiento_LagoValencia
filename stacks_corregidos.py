@@ -21,8 +21,9 @@ def generar_composite(rutas, gdb_salida):
         nombre_composite = os.path.basename(ruta_base)  # El nombre de la carpeta será el identificador del composite
         salida_composite = os.path.join(gdb_salida, f"{nombre_composite}_composite")  # Define la ruta del composite en la GDB
 
-        # Obtener todas las bandas (archivos TIF) dentro de la carpeta
-        bandas = [os.path.join(ruta_base, archivo) for archivo in os.listdir(ruta_base) if archivo.endswith(".TIF")]
+        # Obtener todas las bandas (archivos TIF) dentro de la carpeta que tienen el sufijo "_SR_Bn.TIF"
+        bandas = [os.path.join(ruta_base, archivo) for archivo in os.listdir(ruta_base)
+                  if "_SR_B" in archivo and archivo.endswith(".TIF")]
 
         # Verificar si se encontraron bandas en la carpeta
         if not bandas:
@@ -42,12 +43,12 @@ def main():
     """
     # Lista de rutas base de las carpetas con las bandas
     rutas = [
-        r"D:\Workspace\LagoValencia\raster\TM004053_24_01_1986",
-        r"D:\Workspace\LagoValencia\raster\TM004053_19_01_1990",
-        r"D:\Workspace\LagoValencia\raster\ETM_23_01_2000",
-        r"D:\Workspace\LagoValencia\raster\OLI_TIRS004053_20140121",
-        r"D:\Workspace\LagoValencia\raster\OLI_TIRS005053_20190211",
-        r"D:\Workspace\LagoValencia\raster\OLI_TIRS004053_20230130"
+        r"D:\Workspace\LagoValencia\raster\LT05_L2SP_004053_19860124_20200918_02_T1",
+        r"D:\Workspace\LagoValencia\raster\LT05_L2SP_004053_19900119_20240116_02_T1",
+        r"D:\Workspace\LagoValencia\raster\LE07_L2SP_004053_20000123_20200918_02_T1",
+        r"D:\Workspace\LagoValencia\raster\LC08_L2SP_004053_20140121_20200912_02_T1",
+        r"D:\Workspace\LagoValencia\raster\LC08_L2SP_004053_20190119_20200830_02_T1",
+        r"D:\Workspace\LagoValencia\raster\LC08_L2SP_004053_20230130_20230208_02_T1"
     ]
 
     # Ruta de la Geodatabase de salida

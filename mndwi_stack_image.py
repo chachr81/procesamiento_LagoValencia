@@ -20,12 +20,12 @@ output_folder = r"D:\\Workspace\\LagoValencia\\datos"
 # Datos de Entrada (actualizado para usar rasters en stack)
 stack_bandas = {
     
-    '1986': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\1986.tif", 'Green', 'NearInfrared_2'),
-    '1990': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\1990.tif", 'Green', 'NearInfrared_2'),
-    '2000': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2000.tif", 'sr_band2', 'sr_band5'),
-    '2014': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2014.tif", 'Green', 'ShortWaveInfrared_1'),
-    '2019': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2019.tif", 'Green', 'ShortWaveInfrared_1'),
-    '2023': (r"D:\\Workspace\\LagoValencia\\raster\\imagenes_corregidas\\2023.tif", 'sr_band3', 'sr_band6')
+    '1986': (r"D:\Workspace\LagoValencia\LagoValencia.gdb\LT05_L2SP_004053_19860124_20200918_02_T1_composite", 'Band_2', 'Band_5'),
+    '1990': (r"D:\Workspace\LagoValencia\LagoValencia.gdb\LT05_L2SP_004053_19900119_20240116_02_T1_composite", 'Band_2', 'Band_5'),
+    '2000': (r"D:\Workspace\LagoValencia\LagoValencia.gdb\LE07_L2SP_004053_20000123_20200918_02_T1_composite", 'Band_2', 'Band_5'),
+    '2014': (r"D:\Workspace\LagoValencia\LagoValencia.gdb\LC08_L2SP_004053_20140121_20200912_02_T1_composite", 'Band_3', 'Band_6'),
+    '2019': (r"D:\Workspace\LagoValencia\LagoValencia.gdb\LC08_L2SP_004053_20190119_20200830_02_T1_composite", 'Band_3', 'Band_6'),
+    '2023': (r"D:\Workspace\LagoValencia\LagoValencia.gdb\LC08_L2SP_004053_20230130_20230208_02_T1_composite", 'Band_3', 'Band_6')
 }
 
 def calcular_mndwi(stack_path, green_band_name, swir_band_name, output_raster):
